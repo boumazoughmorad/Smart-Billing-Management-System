@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .morad {
+        margin: 20px;
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        display: grid;
+        place-content: center;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .target {
+        visibility: hidden;
+        margin: 20px;
+        outline: 1px solid red;
+        width: fit-content;
+    }
+    
+    #x_id:checked + .target {
+        visibility: visible;
+    }
+    </style>
+
+
+<body>
+    <label for="x_id" class="morad">MSG</label>
+        <input type="checkbox" name="" id="x_id" hidden>
+    <div class="target">
+        <li>msg1</li>
+        <li>msg2</li>
+        <li>msg3</li>
+    </div>
+    
+
+</body>
+
+
+</html>

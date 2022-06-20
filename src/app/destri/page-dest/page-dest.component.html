@@ -1,0 +1,286 @@
+<div class="mercado-clone-wrap">
+    <div class="mercado-panels-actions-wrap">
+        <a class="mercado-close-btn mercado-close-panels" href="">x</a>
+    </div>
+    <div class="mercado-panels"></div>
+</div>
+
+<!--header-->
+<header id="header" class="header header-style-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="topbar-menu-area">
+                <div class="container">
+                   
+                    <div class="topbar-menu right-menu">
+                        <ul>
+                            <li class="menu-item" ><a title="Register or Login" (click)="signout()">déconnecter</a></li>
+                           
+                           
+                        </ul>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mid-section main-info-area">
+
+                  
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="{{image_redi}}{{infoClientid.image_path}}" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div>
+                                {{infoClientid.name}}
+                            </div>
+                         </div>
+                   
+
+                 
+              
+            </div>
+            
+            </div>
+            
+
+            <div class="nav-section header-sticky">
+                
+      
+                <div class="primary-nav-section" >
+                    <div class="container">
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
+                            <li class="menu-item home-icon" style="background-color: blue;">
+                                <a class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+<br><br>
+<div class="wrap-iten-in-cart">
+  
+    <!-- <ul class="products-cart">
+        
+        <li class="pr-cart-item"> -->
+            
+            <!-- <div class="product-name">
+                <a href="">COMMENDE</a>
+                <a href="#commande"  data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
+                <div id="commande" class="modal fade">
+                    <div class="modal-dialog" style="left: 0cm;" >
+                        <div class="modal-content"   style="color: beige; background-color: rgb(56, 53, 53);" >
+                            <a href="dest/page">  <button type="button" class="close" >&times;</button></a>
+                                                     
+                    <p>id commande:</p><p>lllllllllllllll</p><br>
+                    <p>quantity:</p><p>lllllllllllllll</p><br> 
+                    <p>prix:</p><p>lllllllllllllll</p><br> 
+                    <p>factory:</p><p>lllllllllllllll</p><br> 
+                      </div></div></div>
+                                                  
+            </div> -->
+          
+            <!-- <div class="product-name">
+                <a href="#client" data-toggle="modal" >CLIENT</a>
+                
+            </div> -->
+            <table><thead>
+                    <td style="width: 300;border: 2px;height: 50;" >image</td>
+                    <td style="width: 300;height: 50;">Commnde</td>
+                    <td style="width: 300;height: 50;">client</td>
+                    <td style="width: 300;height: 50;">Producteur</td>
+                    <td style="width: 300;height: 50;">date order</td>
+                    <td style="width: 300;height: 50;">expédition</td>
+                    <td style="width: 300;height: 50;">delivry</td>
+            </thead>
+            <tbody *ngFor="let com of commandes">
+                <tr>
+                    <td ><i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                        <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                        <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id"><figure><img src="{{image_redi}}{{p.image_path}}" alt=""></figure></i></i></i></i>
+                         
+                       
+                    <!-- <figure><img src="assets/img/products/digital_06.jpg" alt=""></figure> -->
+                </td>
+                    <!-- "{{image_redi}}" -->
+                    <!-- style="height: 120;" -->
+                    <td style="height: 120;">
+            <details>
+                
+                <summary>detaile</summary>
+                <p>id commande:</p><p>{{com.id}}</p><br>
+                <p>Nom:</p><p> <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                    <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                    <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id">{{p.name}}</i></i></i></i>
+               </p><br>
+                <p>quantity:</p><p><i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                    <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                    <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id">{{co.quantity}}</i></i></i></i>
+       </p><br> 
+                <p>prix:</p><p>{{com.prix_totale_orders}}</p><br> 
+                <!-- <p>factory:</p><p>lllllllllllllll</p><br>  -->
+            </details></td><td style="height: 120;">
+            <details>
+                <summary>detaile</summary>
+                <p>id Client:</p><p>
+                    <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">{{co.client_id}}</i></i>
+            
+                </p><br>
+                <p>Nom:</p><p>
+                    <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                        <i *ngFor="let cli of client"><i *ngIf="cli.id==co.client_id">{{cli.name}}</i></i>
+             
+                    </i></i>
+            
+
+                </p><br> 
+                <p>email:</p><p>
+                    <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                        <i *ngFor="let cli of client"><i *ngIf="cli.id==co.client_id">{{cli.email}}</i></i>
+             
+                    </i></i>
+                </p><br> 
+                <p>adresse:</p><p>
+                    <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                        <i *ngFor="let cli of client"><i *ngIf="cli.id==co.client_id">{{cli.address}}</i></i>
+             
+                    </i></i>
+                </p><br> 
+            </details></td>
+            <td style="height: 120;"> <details>
+                <summary>detaile</summary>
+                <p>id Producteur:</p><p> <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                    <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                    <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id">
+                        <i *ngFor="let f of factory "><i *ngIf="f.id==p.producer_id"> {{f.id}}</i></i>   
+                    </i></i></i></i></p><br>
+                <p>Nom:</p><p> <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                    <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                    <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id">
+                        <i *ngFor="let f of factory "><i *ngIf="f.id==p.producer_id"> {{f.name}}</i></i>   
+                    </i></i></i></i></p><br> 
+                <p>email:</p><p> <i *ngFor="let co of commande"><i *ngIf="com.panier_id==co.id">
+                    <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+                    <i *ngFor="let p of producers "><i *ngIf="p.id==co.products_id">
+                        <i *ngFor="let f of factory "><i *ngIf="f.id==p.producer_id"> {{f.email}}</i></i>   
+                    </i></i></i></i></p><br> 
+               
+            </details></td>
+            <!-- <td style="height: 120;"> <br> <i class="fa container1" aria-hidden="true"><i class="house" aria-hidden="true">.. in_stock</i></i> -->
+                <!-- <input type="submit"  class="btn btn-danger " value="in_stock"    > -->
+                <!-- (click)="deletdit(ds.id)" -->
+                  <td> {{com.date_orders}}   
+
+    
+                  </td> 
+                <!--  -->
+          
+            <td style="height: 120;"><i *ngIf="com.statu==0"><i class="fa fa-truck" aria-hidden="true" >expédition</i></i>
+                <i *ngIf="com.statu!=0 && com.statu!=1">
+                <input type="submit"  class="btn btn-danger " value="expédition"  (click)="shipping(com.id)" ></i>
+                <br><br>
+                <!-- 18/04/2022  -->
+                <!-- <input type="submit"  class="btn btn-danger " value="Shipping"    ></td> -->
+            <td style="height: 120;">
+                <!-- <i class="fa fa-life-ring" aria-hidden="true">Dilivry</i> -->
+                <i *ngIf="com.statu==1">
+                {{com.date_livraison}}</i>
+                <i *ngIf="com.statu!=1">
+                    <a  href="#addEmployeeModal"  data-toggle="modal"> <input type="submit"  class="btn btn-danger " value="Dilivry"   (click)="Dilivry(com.id)"></a></i></td>
+                <div id="addEmployeeModal" class="modal fade" style="text-align: center;">
+
+                    <div class="modal-dialog"  >
+                        <div class="modal-content" style="  width: 15cm;">
+                            <a href="conn/client">  <button type="button" class="close"  aria-hidden="true">&times;</button></a>
+                     
+                            <!-- <form [formGroup]="distForm"    (ngSubmit)="insertdistrData()"> -->
+                                <form action="" [formGroup]="form"  (ngSubmit)="sub()" novalidate>
+                                    <!--  -->
+                                    <!--  -->
+                                <p>moyen de transport:</p>
+                             <table>
+                               
+                                 <tr>
+                                     <td>
+                                    
+                                     <input type="text" class="form-control form-control-user   " name="transport"  
+                                        >
+                             </tr>
+                                 
+                                
+                                <tr><td>
+                                    <a href="dest/page" class="btn btn-danger">valide</a></td>
+                                    <button type="submit" class="btn btn-danger" (click)="updatecommandess(com.id)" ></button>
+                                    <!--   -->
+                                    </tr>
+                                 </table>
+                                </form>
+                          
+                        </div>
+                    </div>
+                </div>
+        </tr>
+    </tbody>
+        </table>
+<!--             
+            <div class="col-12">
+                <div class="form-check">
+                  <input type="checkbox" >
+                  <label>
+                   <h4>desponible</h4> 
+                  </label>
+                </div>
+              </div> -->
+                 
+            <!-- <div class="product-name">
+                <div class="form-check">
+                  <input type="checkbox" >
+                  <label>
+                   <h4>livrer</h4> 
+                  </label>
+                </div>
+              </div> -->
+        <!-- </li>												
+    </ul> -->
+</div>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+
+
+    
+
+<footer id="footer" >
+    <div class="wrap-footer-content footer-style-1" >
+
+        <div class="wrap-function-info" style="background-color: rgb(14, 77, 160);">
+            <div class="container">
+                <ul>
+                    
+
+                   
+                  
+                    <li class="fc-info-item">
+                        <i class="fa fa-life-left"></i>
+                       
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--End function info-->
+
+    </div>
+    
+</footer>
+

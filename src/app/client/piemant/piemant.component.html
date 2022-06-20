@@ -1,0 +1,163 @@
+<div class="mercado-clone-wrap">
+    <div class="mercado-panels-actions-wrap">
+        <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+    </div>
+    <div class="mercado-panels"></div>
+</div>
+
+<!--header-->
+<header id="header" class="header header-style-1">
+    <div class="container-fluid" >
+        <div class="row" >
+            <div class="topbar-menu-area" >
+                <div class="container" >
+                   
+                    <div class="topbar-menu right-menu" >
+                        <ul>
+                            <li class="menu-item" ><a title="Register or Login"  (click)="signout()">déconnecter</a></li>
+                            <li class="menu-item lang-menu menu-item-has-children parent">
+                                <a >Categorie<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu lang"  >
+                                   <div *ngFor="let prod of categories"> <li class="menu-item" ><a  [routerLink]="['/client/gategorie/',prod.id]"  ><span class="img label-before"></span>{{prod.name}}</a></li></div>
+                                    </ul>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="container" >
+                <div class="mid-section main-info-area">
+
+                    <a href="conn/client">
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="{{image_redi}}{{producersid.image_path}}" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div>
+                                {{producersid.name}}
+                            </div>
+                         </div>
+                    </a>
+                    <div class="wrap-logo-top left-section">
+                        <img src="assets/img/logo-top-1.png" alt="mercado">
+                    </div>      <div class="wrap-search center-section" >
+                        <div class="wrap-search-form">
+                            <form action="#" id="form-search-top" name="form-search-top" >
+                                <input type="text" name="search" value="" placeholder="chercher nom du produit...">
+                                <button form="form-search-top" type="button" ><i class="fa fa-search" aria-hidden="true" ></i></button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                 
+                
+						<div class="wrap-icon right-section">
+							
+							<div class="wrap-icon-section minicart">
+								<a href="client/panier" class="link-direction">
+									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+									<div class="left-info">
+										
+										<span class="title">Panier</span>
+									</div>
+								</a>
+							</div>
+                        </div>
+            </div>
+            
+            </div>
+
+            <div class="nav-section header-sticky" >
+                
+
+                <div class="primary-nav-section" style="background-color:red;">
+                    <div class="container">
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu"  >
+                            <li class="menu-item home-icon" style="background-color: black;">
+                                <a href="page/client" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true" ></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+	<!--main area-->
+	<main id="main" class="main-site">
+
+		<div class="container">
+		
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="#" class="link">home</a></li>
+					<!-- <li class="item-link"><span>login</span></li> -->
+				</ul>
+			</div>
+			<div class=" main-content-area">
+				<div class="wrap-address-billing">
+					<!-- <form action="#" method="get" name="frm-billing"> -->
+						<p class="row-in-form">
+							<label for="zip-code">code postal / ZIP:</label>
+							<input id="zip-code" type="number" name="zip-code" value="" placeholder="code postal ...">
+						</p>
+						<p class="row-in-form">
+							<label for="city">ville<span>*</span></label>
+							<input id="city" type="text" name="city" value="" placeholder="nom de ville ....">
+						</p>
+						
+					
+				</div>
+				<form method="post" [formGroup]="factoryForm"   (ngSubmit)="inert()">
+				<div class="summary summary-checkout">
+					<div class="summary-item payment-method">
+						<h4 class="title-box">méthode de paiment</h4>
+						<!-- <p class="summary-info"><span class="title">Check / Money order</span></p> -->
+						<p class="summary-info"><span class="title">Credit Cart </span></p>
+						<div class="choose-payment-methods">
+							<label class="payment-method">
+								<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
+								<span>Direct Bank Transder</span>
+								<span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span>
+							</label>
+							<label class="payment-method">
+								<input name="payment-method" id="payment-method-visa" value="visa" type="radio">
+								<span>visa</span>
+								<span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
+							</label>
+							<label class="payment-method">
+								<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
+								<span>Paypal</span>
+								<span class="payment-desc">You can pay with your credit</span>
+								<span class="payment-desc">card if you don't have a paypal account</span>
+							</label>
+						</div>
+						<p class="summary-info grand-total"><span> Total</span> <span class="grand-total-price">${{additon}}.00</span></p>
+						<!-- <a href="client/Ok{id}" class="btn btn-medium" style="background-color: rgb(48, 8, 160);">Bay</a> -->
+						<button class="btn btn-medium" >Baie</button>
+					
+					</div>
+					<div class="summary-item shipping-method">
+							<h4 class="title-box">Distributeur</h4>
+							<mat-select name="id_Gategorier" formControlName="distrubiteur_id"  style="background-color: aqua;">
+								<mat-option *ngFor="let prod of dist" value="{{prod.id}}" style="background-color:bisque;">{{prod.name}}</mat-option>
+							</mat-select>
+						<!-- <p class="row-in-form">
+							<label for="coupon-code">Enter Your Coupon code:</label>
+							<input id="coupon-code" type="text" name="coupon-code" value="" placeholder="">	
+						</p>
+						<a href="#" class="btn btn-small" style="background-color: rgb(5, 6, 114);">Apply</a> -->
+					</div>
+
+				</div></form>
+
+
+			</div><!--end main content area-->
+		</div><!--end container-->
+
+	</main>
+	<!--main area-->

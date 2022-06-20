@@ -1,0 +1,65 @@
+.container1 {
+    height: 20px;
+    width: 17.5px;
+    position: relative;
+  }
+  
+  .container1 * {
+    position: absolute;
+  }
+.house {
+    top: 2%;
+    left: 2px;
+    height: 10px;
+    width: 13px;
+    background: rgb(0, 0, 0);
+  }
+  .house::before {
+    content: '';
+    position: absolute;
+    top: -5.3px;
+    left: 2px;
+    height: 9px;
+    width: 9.5px;
+    background: rgb(8, 8, 8);
+    transform: rotate(45deg);
+    border-top: 0.5px solid blue;
+    border-left: 0.5px solid blue;
+    z-index: 2
+  }
+
+  .house::after {
+    content: '';
+    position: absolute;
+    top: -3.5px;
+    left: 0.75px;
+    height: 3.5px;
+    width: 1.5px;
+    background: blue;
+    z-index: 0.5;
+    border-top: px solid rgba(0, 0, 0, .3);
+  }
+
+
+  
+
+  
+ .col-chk{
+   margin-left: 300px;
+ }
+ .col-15{
+   float: left;
+   width: 15%;
+   margin-top: 5px;
+ }
+ .col-35{
+   float: left;
+   width: 35%;
+   margin-top: -10px;
+ }
+ .row1::after{
+   content: "";
+   display: table;
+   clear: both;
+  
+ }

@@ -1,0 +1,119 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+      font-size: 17px;
+    }
+    
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+    }
+    
+    .content1 {
+      position: fixed;
+      bottom: 0;
+      /* background: rgba(0, 0, 0, 0.5); */
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    #myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
+</style>
+<video autoplay muted loop id="myVideo">
+    <source src="assets/img/vidio2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content1">
+ <div >
+  <form  >
+   <div class="container "  >
+
+       <!-- Outer Row -->
+       <div class="row justify-content-center">
+
+           <div class="col-xl-10 col-lg-12 col-md-12" style="min-height: 1px;" >
+
+               <div class="card o-hidden   my-12"  >
+                   <div class="card-body p-0"  >
+                       <!-- Nested Row within Card Body -->
+                       <div class="row" style="  display: flex;
+                       flex-wrap: wrap;
+                       margin-left: -0.75rem;
+                       margin-right: -0.75rem;    box-sizing: border-box;">
+                           
+                           <div class="col-lg-6 d-none d-lg-block " style="background-image:url('assets/img/blogs/blog-article-3.jpg');" ></div>
+                           <div class="col-lg-6"  >
+                               <div class="p-5">
+                                   <div class="text-center">
+                                       <h1 class="h4 text-gray-900 mb-4 .bg-gradient-primary" >ESPACE Producteur</h1>
+                                   </div>
+                                   
+                                   <form class="user" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user  is-invalid " 
+                                           name="email"   aria-describedby="emailHelp"
+                                            placeholder="Entrer votre adresse..." required   formControlName="email" [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+                                        <!-- <p class="alert alert-danger" *ngIf="email.errors && email.touched">jjj</p> -->
+                                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback" >
+                                            <div *ngIf="f['email'].errors['required']">Email est requis</div>
+                                            <div *ngIf="f['email'].errors['email']">Email est invalide</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                            name="password"  placeholder="mot de passe" required minlength="8" formControlName="password" [ngClass]="{'is-invalid':submitted && f['password'].errors}">
+                                            <!-- <p class="alert alert-danger" *ngIf="password.errors?.required && password.touched">jjj</p>
+                                            <p class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">min8</p> -->
+                                            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback" >
+                                                <div *ngIf="f['password'].errors['required']">mot de passe est invalide</div>
+                                                </div>
+                                    </div>
+                                   
+                                    <button type="submit" class="btn btn-primary  btn-fill btn-lg  btn-user btn-block">se connecter</button>
+                                 
+                                   
+                                </form>
+                                   
+                                   <!-- <div class="text-center">
+                                       <a class="small" href="#">Forgot Password?</a>
+                                   </div> -->
+                               
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+
+       </div>
+
+
+   </div>
+
+  </form>
+</div>
+</div>

@@ -1,0 +1,156 @@
+<div class="mercado-clone-wrap">
+    <div class="mercado-panels-actions-wrap">
+        <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+    </div>
+    <div class="mercado-panels"></div>
+</div>
+
+<!--header-->
+<header id="header" class="header header-style-1">
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="topbar-menu-area" >
+                <div class="container" > 
+                   
+                    <div class="topbar-menu right-menu" >
+                        <ul>
+                            <li class="menu-item" ><a title="Register or Login" href="login/client">déconnecter</a></li>
+                             <li class="menu-item lang-menu menu-item-has-children parent">
+                                <a >Categorie<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu lang" >
+                                    <div *ngFor="let prod of categories">
+                                 <div>  <li class="menu-item" ><a [routerLink]="['/client/gategorie/',prod.id]"><span class="img label-before"></span>{{prod.name}}</a></li>
+                                 </div>  </div> </ul>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mid-section main-info-area">
+
+                    <a href="conn/client">
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="{{image_redi}}{{producersid.image_path}}" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div>
+                                {{producersid.name}}
+                            </div>
+                         </div>
+                    </a>
+                    <div class="wrap-logo-top left-section">
+                        <img src="assets/img/logo-top-1.png" alt="mercado">
+                    </div> 
+
+                    <div class="wrap-search center-section" >
+                        <div class="wrap-search-form">
+                            <form action="#" id="form-search-top" name="form-search-top" >
+                                <input type="text" name="search" value="" placeholder="chercher par nom du produit...">
+                                <button form="form-search-top" type="button" ><i class="fa fa-search" aria-hidden="true" ></i></button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                 
+                
+						<div class="wrap-icon right-section">
+							
+							<div class="wrap-icon-section minicart">
+								<a href="client/panier" class="link-direction">
+									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+									<div class="left-info">
+										
+										<span class="title">Panier</span>
+									</div>
+								</a>
+							</div>
+                        </div>
+            </div>
+            
+            </div>
+
+            <div class="nav-section header-sticky" >
+                
+
+                <div class="primary-nav-section" style="background-color:red;">
+                    <div class="container">
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu"  >
+                            <li class="menu-item home-icon" style="background-color: black;">
+                                <a href="page/client" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true" ></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main id="main" class="main-site">
+
+    <div class="container">
+
+        <div class="wrap-breadcrumb">
+            <ul>
+                <li class="item-link"><a href="#" class="link">home</a></li>
+                <li class="item-link"><span>Panier</span></li>
+            </ul>
+        </div>
+        <div class=" main-content-area">
+        <form method="post">
+            <div class="wrap-iten-in-cart">
+                <h3 class="box-title">Nome de produit</h3>
+                <ul class="products-cart" *ngFor="let com of commande" >
+                    <div  *ngFor="let c of producers" >
+                        <div *ngIf="f(c.id,com.products_id)" >
+                    <li class="pr-cart-item" >
+                       
+                        <div class="product-image">
+                        <!-- <p>{{}}</p> -->
+                            <figure><img src="{{image_redi}}{{fun(c)}}" alt=""></figure>
+                            <!-- <figure><img src="assets/img/products/digital_20.jpg" alt=""></figure> -->
+                    
+                        </div>
+                        <div class="product-name">
+                            <a class="link-to-product" href="#">{{c.name}} [White]</a>
+                        </div>
+                        <div class="price-field produtc-price"><p class="price">{{com.quantity}}</p></div>
+                     
+                        <div class="price-field sub-total"><p class="price" >${{com.prix_totale}}.00</p></div>
+                        <div class="delete">
+                            <a href="#" class="btn btn-delete" title="">
+                                <span>supprimer</span>
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                            </a>
+                       
+                        </div>
+                    </li>
+                </div></div>
+          											
+                </ul>
+            </div>
+        </form>
+            <div class="summary">
+                <div class="order-summary">
+                    <!-- <h4 class="title-box">Order Summary</h4>
+                    <p class="summary-info"><span class="title">Subtotal</span><b class="index"></b></p> -->
+                    <!-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> -->
+                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{additon}}.00</b></p>
+                </div>
+                <div class="checkout-info" >
+                   
+                    <a  href="client/piement" class="btn btn-checkout"  name="check" style="background-color: rgb(13, 23, 161);">valider commande</a>
+                </div>
+                
+            </div>
+
+            </div><!--end container-->
+    </div>
+    
+</main>
+<!--main area-->
+

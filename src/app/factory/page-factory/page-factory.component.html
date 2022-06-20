@@ -1,0 +1,206 @@
+
+	
+<div class="image-container set-full-height " style="background-image: url('assets/b/img/wizard.jpg')"  loading="lazy">
+   <header id="header" class="header header-style-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="topbar-menu-area">
+                <div class="container">
+                   
+                    <div class="topbar-menu right-menu">
+                        <ul>
+                            <li class="menu-item" ><a title="Register or Login" (click)="signout()">déconnecter</a></li>
+                            <li class="menu-item" ><a title="Register or Login" href="factory_page">Ajouter</a></li>
+                            <li class="menu-item" ><a title="Register or Login" href="factory_supp">Modifier</a></li>
+                           
+                   
+                           
+                         
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mid-section main-info-area">
+
+                  
+                  
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="{{image_redi}}{{fact.logo_path}}" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div style="color: aliceblue;"> 
+                                {{fact.name}}
+                            </div>
+                         </div>
+                   
+                
+
+                 
+               
+            </div>
+            
+            </div>
+
+            <div class="nav-section header-sticky">
+                
+
+                <div class="primary-nav-section" style="background-color: #cabac3;">
+                    <div class="container" >
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu"  >
+                            <li class="menu-item home-icon">
+                                <a href="admin/page" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+   
+    
+        <!--   Big container   -->
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+    
+                <!--      Wizard container        -->
+                <div class="wizard-container">
+                    <div class="card wizard-card" data-color="azzure" id="wizard">
+                        <form  [formGroup]="factoryForm"    (ngSubmit)="insertfacData()">
+                    <!--        You can switch ' data-color="azzure" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
+    
+                            <div class="wizard-header">
+                                <h3>
+                                   <b>Ajouter</b> Produit <br>
+                                   <small>Donner les information</small>
+                                </h3>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li><a href="#details" data-toggle="tab">Détails</a></li>
+                                     <li><a href="#description" data-toggle="tab">Description</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="details">
+                                  <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-1">
+                                        <div class="picture-container">
+                                             <div class="picture">
+                                                 <img  class="picture-src" id="wizardPicturePreview" title=""/>
+                                                 <input type="file" id="wizard-picture" name="image_path" formControlName="logo_path" (change)="onFileChange($event)">
+                                             </div>
+                                             <h6>choisir une image</h6>
+                                         </div>
+                                     </div>
+                                      <div class="col-sm-12">
+                                         </div>
+                                      <div class="col-sm-5 col-sm-offset-1">
+                                          <div class="form-group">
+                                            <label>Name Produit?</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="nom de produit ?" name="name" formControlName="name" >
+                                          </div>
+                                      </div>
+                                      <!-- <div class="col-sm-5 col-sm-offset-1">
+                                        <div class="form-group">
+                                          <label>id factory?</label>
+                                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="What id factory..?" name="id_factory" formControlName="producer_id">
+                                        </div>
+                                    </div> -->
+                                    
+                                      <div class="col-sm-5">
+                                          <div class="form-group">
+                                            <label>Categorier</label>
+                                            <!-- <select class="form-control" name="categorie" ng-init="time.categories='{{}}'">
+                                                <option disabled="" selected="" *ngFor="let prod of categories">{{prod.name}}</option>
+                                                
+                                            </select> -->
+                                          
+                                                <mat-select name="id_Gategorier" formControlName="categorie_id">
+                                                    <mat-option *ngFor="let prod of categories" value="{{prod.id}}" >{{prod.name}}</mat-option>
+                                                </mat-select>
+                                            
+                                            <!-- <div class="mdc-select mdc-select--filled demo-width-class">
+                                                <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-expanded="false"
+                                                aria-labelledby="demo-label demo-selected-text"
+                                                ></div>
+                                            </div>
+                                          </div> -->
+                                          <!-- 
+                                            <mat-option *ngFor="let prod of categories" >{{prod.name}}</mat-option>
+                                          </mat-select> -->
+                                         
+
+<!-- 
+                                          <div class="" >
+                                            <select name="" id="">
+                                              <option value="" *ngFor="let dog of categories">llllllllllll</option>
+                                            </select>
+                                          </div> -->
+                                          
+                                          </div>
+                                      </div>
+                                     
+                                      <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>quantité</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="quantite" formControlName="quantite">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+                                      <div class="col-sm-6">
+                                          <div class="form-group">
+                                              <label>Prix</label>
+                                              <div class="input-group">
+                                                  <input type="text" class="form-control" name="prix" formControlName="prix">
+                                                  <span class="input-group-addon">$</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                               
+                                <div class="tab-pane" id="description">
+                                    <div class="row">
+                                        <h4 class="info-text"> description </h4>
+                                        <div class="col-sm-6 col-sm-offset-1">
+                                             <div class="form-group">
+                                                <label>description</label>
+                                                <textarea class="form-control" placeholder="" rows="9" name="descreption" formControlName="description">
+                                                </textarea>
+                                              </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-info btn-wd btn-sm' name='next' value='suivant' />
+                                        <!-- <input type='submit' class='btn btn-finish btn-fill btn-info btn-wd btn-sm' name='finish' value='Finish' /> -->
+                                        <button type="submit" class='btn btn-finish btn-fill btn-info btn-wd btn-sm'> terminer</button>
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='précédent' />
+                                    </div>
+                                    <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- wizard container -->
+            </div>
+            </div> <!-- row -->
+        </div> <!--  big container -->
+    
+       
+    </div>

@@ -1,0 +1,112 @@
+<div class="mercado-clone-wrap">
+    <div class="mercado-panels-actions-wrap">
+        <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+    </div>
+    <div class="mercado-panels"></div>
+</div>
+
+<!--header-->
+<header id="header" class="header header-style-1">
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="topbar-menu-area" >
+                <div class="container" >
+                   
+                    <div class="topbar-menu right-menu" >
+                        <ul>
+                            <li class="menu-item" ><a title="Register or Login" href="login/client">Login</a></li>
+                            <li class="menu-item" ><a title="Register or Login" href="register/client{id}">Register</a></li>
+                            <li class="menu-item lang-menu menu-item-has-children parent">
+                                <a >Gategorie<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="submenu lang" *ngFor="let prod of categories">
+                                    <li class="menu-item" ><a title="hungary" href="client/gategorie{id}"><span class="img label-before"></span>{{prod.name}}</a></li>
+                                   </ul>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mid-section main-info-area">
+
+                    <a href="conn/client{id}">
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="assets/img/author-avata.jpg" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div>
+                                morad
+                            </div>
+                         </div>
+                    </a>
+
+                    <div class="wrap-search center-section" >
+                        <div class="wrap-search-form">
+                            <form action="#" id="form-search-top" name="form-search-top" >
+                                <input type="text" name="search" value="" placeholder="Search here...">
+                                <button form="form-search-top" type="button" ><i class="fa fa-search" aria-hidden="true" ></i></button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                 
+                
+						<div class="wrap-icon right-section">
+							
+							<div class="wrap-icon-section minicart">
+								<a href="client/panier{id}" class="link-direction">
+									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+									<div class="left-info">
+										
+										<span class="title">Panier</span>
+									</div>
+								</a>
+							</div>
+                        </div>
+            </div>
+            
+            </div>
+
+            <div class="nav-section header-sticky" >
+                
+
+                <div class="primary-nav-section" style="background-color:red;">
+                    <div class="container">
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu"  >
+                            <li class="menu-item home-icon" style="background-color: black;">
+                                <a href="page/client{id}" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true" ></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main id="main" class="main-site">
+
+    <div class="container">
+
+        <div class="wrap-breadcrumb">
+            <ul>
+                <li class="item-link"><a href="#" class="link">home</a></li>
+                <li class="item-link"><span>Thank You</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container pb-60">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Thank you for your order</h2>
+                <p>A confirmation email was sent.</p>
+                <a href="page/client{id}" class="btn btn-submit btn-submitx">Continue Shopping</a>
+            </div>
+        </div>
+    </div><!--end container-->
+
+</main>

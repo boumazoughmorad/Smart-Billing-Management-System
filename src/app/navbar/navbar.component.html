@@ -1,0 +1,60 @@
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+  }
+
+  .msg_div {
+      margin: 20px;
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+      display: grid;
+      place-content: center;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+  }
+
+  .list {
+      visibility: hidden;
+      margin: 20px;
+      outline: 1px solid red;
+      width: fit-content;
+  }
+
+  .list.selected {
+      visibility: visible;
+  }
+</style>
+
+
+
+  <div class="msg_div">MSG</div>
+  <div class="list">
+      <li>msg1</li>
+      <li>msg2</li>
+      <li>msg3</li>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+      const msg_div = document.querySelector('.msg_div');
+
+      const list = document.querySelector('.list');
+
+      msg_div.addEventListener('click', _ => {
+          list.classList.toggle('selected')
+      })
+
+  </script>
+  

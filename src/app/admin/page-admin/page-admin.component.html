@@ -1,0 +1,375 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+   
+    
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+    }
+    
+    .content1 {
+     position: absolute;
+    
+    }
+    
+  
+    
+    
+</style>
+<video autoplay muted loop id="myVideo">
+    <source src="assets/img/v/d.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content1">
+      <header id="header" class="header header-style-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="topbar-menu-area">
+                <div class="container">
+                    
+                   
+                    <div class="topbar-menu right-menu">
+                        <ul>
+                            
+                            <li class="menu-item" ><a title="Register or Login"  [routerLink]="['/login/admin']" (click)="signout()">déconnecter</a></li>
+                            
+                   
+                           
+                            <li class="menu-item menu-item-has-children parent" >
+                                <a [routerLink]="['/admin/ajouterfactory']" >Producteur </a>
+                                
+                            </li>
+                             <li class="menu-item menu-item-has-children parent" >
+                                <a  [routerLink]="['/admin/ajouterdist']" >distributeur</a>
+                               
+                             </li>
+                             <li class="menu-item menu-item-has-children parent" >
+                                <a [routerLink]="['/admin/ajouterproduit']">produit</a>
+                               
+                            </li>
+                            <li class="menu-item menu-item-has-children parent" >
+                                <a [routerLink]="['/admin/commande']">Commande</a>
+                               
+                            </li> 
+                            <li class="menu-item menu-item-has-children parent" >
+                                <a [routerLink]="['/admin/Gategorie']">Categorie</a>
+                               
+                            </li> 
+                           
+
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="container">
+                <div class="mid-section main-info-area">
+
+                    <a [routerLink]="['/admin/page']">
+                        <div class="logo-container">
+                             <div class="logo">
+                                 <img src="{{image_redi}}{{infoClientid.image_path}}" alt="Creative Tim Logo">
+                                 
+                             </div>
+                             <div>
+                                {{infoClientid.name}}
+                            </div>
+                         </div>
+                    </a>
+
+
+                    <div class="wrap-search center-section">
+                        <div class="wrap-search-form">
+                            <form action="#" id="form-search-top" name="form-search-top">
+                                <input type="text" name="search" value="" placeholder="chercher par nom du client...">
+                                <button form="form-search-top" type="button" style="background-color: #55b9f3;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <div class="wrap-list-cate">
+                                    <input type="hidden" name="product-cate" value="0" id="product-cate" style="background-color: #55b9f3;">
+                                    <a >client </a>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" media="all">
+
+                    <div class="wrapper">
+                    
+                      <div class="bell" id="bell-1">
+                        <div class="anchor material-icons layer-1">notifications_active</div>
+                        <div class="anchor material-icons layer-2">notifications</div>
+                        <div class="anchor material-icons layer-3">notifications</div>
+                        
+                      </div>
+                    
+                    </div> -->
+                    <!--   .target {
+        visibility: hidden;
+        margin: 20px;
+        outline: 1px solid red;
+        width: fit-content;
+    }
+    
+    #x_id:checked + .target {
+        visibility: visible;
+    }
+    </style>
+
+
+<body>
+    <label for="x_id" class="morad">MSG</label>
+        <input type="checkbox" name="" id="x_id" hidden>
+    <div class="target">
+        <li>msg1</li>
+        <li>msg2</li>
+        <li>msg3</li>
+    </div>
+    
+
+</body> -->
+<style>
+     .target {
+        visibility: hidden;
+        margin: 20px;
+        background-color: rgb(215, 215, 241);
+        outline: 1px solid red;
+        width: fit-content;
+    }
+    
+    #x_id:checked + .target {
+        visibility: visible;
+    }
+    </style>
+    
+    <!-- <label for="x_id" class="morad">MSG</label> -->
+    <nav id="sidebar">  <ul class="dots ">
+      <li><label for="x_id"><span  class="glyphicon glyphicon-envelope"><mark class="big swing"></mark></span></label></li>  
+                         
+    <input type="checkbox" name="" id="x_id" hidden>
+<div class="target" >
+   <li *ngFor="let c of commandes"> <div class="dropdown-item d-flex align-items-center" *ngIf="c.report!=null">
+    <div class="dropdown-list-image mr-3">
+        <i *ngFor="let co of commande"><i *ngIf="c.panier_id==co.id">
+            <!-- {{com.quantity}} *ngFor="let com of commande"producers*ngIf="c.id==com.products_id" -->
+            <i *ngFor="let p of infouser"><i *ngIf="p.id==co.client_id"><figure style="width: 50px;height: 50px;"><img src="{{image_redi}}{{p.image_path}}" alt=""></figure>
+              <h4> <div class="text-truncate" style="color: red;">{{p.name}}</div></h4> 
+            </i></i>
+            <div>
+                <h4> 
+                 <div class="small text-gray-500">{{c.report}}</div></h4>
+                 <!--  -->
+             </div>
+        </i></i>
+             
+        <!-- <img class="rounded-circle" src="assets/img/mega_accessories_pr1.jpg" alt="..."> -->
+          </div>
+  
+</div></li> 
+
+    <!-- <li>msg1</li>
+    <li>msg2</li>
+    <li>msg3</li> -->
+</div></ul></nav>
+                
+
+                    <!-- <nav id="sidebar">
+                        <ul class="dots "> -->
+                          <!-- <li>
+                            <a href="#">
+                              <span class="glyphicon glyphicon-user"><mark>23</mark></span>
+                            </a>  
+                          </li> -->
+                          <!-- <li class="" > -->
+                            <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" (click)="func(ds.id)">&#xE254;</i></a> -->
+                            <!-- <div class="morad" for="x_id"> -->
+                            <!-- <a class="nav-link dropdown-toggle" href="#addEmployeeModal" id="messagesDropdown" data-toggle="modal" role="button"> -->
+                            <!-- <span class="glyphicon glyphicon-envelope"><mark class="big swing">1</mark></span> -->
+                            <!-- </a>   -->
+                        <!-- </div> -->
+                          <!-- </li>
+                          <li> -->
+                            <!-- <a href="#">
+                            <span class="glyphicon glyphicon-time"><mark class="rubberBand">99</mark></span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            </a>
+                          </li>    
+                          <li>
+                            <a href="#">
+                            <span class="glyphicon glyphicon-calendar"><mark class="green wobble">99+</mark></span>
+                            </a>
+                          </li>      
+                          <li>
+                            <a href="#">
+                            <span class="glyphicon glyphicon-random"><mark class="blue tada">13</mark></span>
+                            </a>
+                            </li>         -->
+                            <!-- <div class="" aria-labelledby="messagesDropdown" id="x_id" hidden > -->
+                                <!-- class="modal fade" -->
+                                <!-- <div class="target">
+                                <h6 class="dropdown-header">
+                                    Message Center -->
+                                <!-- </h6> -->
+                                <!-- <a class="dropdown-item d-flex align-items-center" href="#"> -->
+                                    <!-- <div class="dropdown-list-image mr-3"> -->
+                                        <!-- <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="..."> -->
+                                        <!-- <h5>client-test :</h5>
+                                    </div>
+                                    <div class="font-weight-bold"><br>
+                                        <div class="text-truncate">n'est pas la meme produit commander</div> -->
+                                        <!-- <div class="small text-gray-500">Emily Fowler · 58m</div> -->
+                                    <!-- </div>
+                                </div> -->
+                                <!--  <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a> -->
+                                <!-- <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </ul> 
+                      </nav> -->
+                    <!-- <script>
+                        const msg_div=document.querySelector('.msg_div');
+                        const list=document.querySelector('.list');
+                        msg_div.addEventListener('click',_=>{
+                            list.classList.toggle('selected')
+                        })
+                    </script> -->
+                    
+                        
+                        
+                      
+                        
+                 
+               
+            </div>
+            
+            </div>
+
+            <div class="nav-section header-sticky">
+                
+
+                <div class="primary-nav-section" style="background-color: #004b1f;">
+                    <div class="container" >
+                        <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu"  >
+                            <li class="menu-item home-icon">
+                                <a href="admin/page" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+                            </li>
+                           																
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+
+            <div class="card wizard-card" data-color="green" id="wizardProfile">
+                <form action="" method="">
+            <!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
+
+                    
+
+                    <div class="wizard-navigation">
+                        <ul>
+                            <li><a  data-toggle="tab">information</a></li>
+                        
+                        </ul>
+
+                    </div>
+
+                    <div class="tab-content">
+                        <div >
+                          <div class="row">
+                              <h4 class="info-text"> les information sur Admin</h4>
+                            
+                              <div class="col-sm-6">
+                                <form class="form-floating">
+                                    <fieldset disabled>
+                                        <img src="{{image_redi}}{{infoClientid.image_path}}" alt="Creative Tim Logo">
+                             
+                                    <div class="mb-3">
+                                    <h3>Nom   :    </h3>
+                                    <input type="email" class="form-control is-invalid"  placeholder="name" value="{{infoClientid.name}}">
+                                    <!-- <label for="floatingInputInvalid">Invalid input</label> -->
+                                   
+                                      <!-- <input type="text" value="" >  -->
+                                      </div>
+                                  <div class="form-group">
+                                    <h3>email   :    </h3>
+                                    <input type="email" class="form-control is-invalid"  placeholder="name" value="{{infoClientid.email}}">
+                                  </div>
+                                        <!-- <div class="clearfix">-->
+                                         
+                                    <!-- <a href="admin/modadmin"> <button  class='btn  btn-warning btn-wd btn-sm' name='modifier'  >modifier</button></a> -->
+                                    
+                                </fieldset>
+                                 </form>
+                                   
+                                
+                            
+                              
+                          
+                          </div></div></div>
+                          
+                        </div>
+                                   
+                        <div class="pull-right">
+                        <div class="wizard-footer height-wizard">
+            
+
+                        <input type="button" name="modifier" class=' btn-warning btn-wd btn-sm' value="Modifier" [routerLink]="['/admin/modadmin']">
+                        </div> 
+                         
+                        </div>
+                        </form></div></div></div></div></div>
+
+
+
+
+                    </div>
